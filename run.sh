@@ -21,7 +21,12 @@ function main() {
 
   npm ci
   npm run build
-  npm publish
+
+  if [ "$INPUT_ACCESS" = "public" ]; then
+    npm publish --access public
+  else
+    npm publish
+  fi
 }
 
 main

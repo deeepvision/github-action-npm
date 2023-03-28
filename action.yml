@@ -7,3 +7,7 @@ inputs:
   registry:
     description: 'The registry to publish to'
     required: true
+  access:
+    description: 'Whether the package is public or private'
+    required: false
+    default: 'private'
