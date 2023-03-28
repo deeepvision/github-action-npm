@@ -1,0 +1,9 @@
+name: 'NPM Publish'
+description: 'Publish a package to NPM'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+inputs:
+  registry:
+    description: 'The registry to publish to'
+    required: true

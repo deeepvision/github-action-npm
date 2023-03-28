@@ -1,0 +1,17 @@
+name: Publish Docker Image
+
+on:
+  push:
+    branches:
+      - v*
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        name: Checkout
+      - uses: docker://ghcr.io/deeepvision/github-action-docker-build:1.2
+        name: Build Docker Image to Github Registry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
